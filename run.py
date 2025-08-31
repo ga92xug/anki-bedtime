@@ -69,6 +69,8 @@ def main(
     
 
     if send_to_phone:
+        if NTFY_TOPIC == "your-topic-here":
+            raise ValueError("Please set your NTFY_TOPIC environment variable.")
         client = NtfyClient(
             server="https://ntfy.sh",
             topic=NTFY_TOPIC,
